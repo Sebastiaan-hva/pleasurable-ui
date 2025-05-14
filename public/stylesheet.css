@@ -50,7 +50,7 @@ body {
     --bg-facetfilter-standard: #B9B9B9;
     --bg-filters: #EEEEEE;
 
-    --illustratie: #575757;
+    --illustration: #575757;
 
     --text-suggestions-chat: #F6F5F5;
     --text-general: #000000;
@@ -126,9 +126,4 @@ body {
     --box-shadow-l: 0px 0px 10px 0px var(--bg-filters-not-choose);
     --box-shadow-m: 2px 1px 5px 0px var(--bg-filters-not-choose);
     --box-shadow-s: 0px 2px 3px -2px var(--bg-filters-not-choose);
-
-
-
-
-
 }
