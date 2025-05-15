@@ -21,7 +21,10 @@ body {
     --font: 'Parkinsans', sans-serif;
 
     /* Lettergroottes voor koppen */
-    --h1: 50px;
+    --h1: 60px;
+    --h2: 40px;
+    --h3: 22px;
+    --h4: 30px;
 
     --main-p: 16.6px;
     --big-text: 20px;
@@ -41,17 +44,20 @@ body {
 
     /* Knoppen */
     --button-background-color: #FFFFFF;
+    --second-button-background-color: #212121;
 
     /*----------------------------------- VARIABELEN VOOR ALLE KNOPPEN EN ANDERE ELEMENTEN --------------------------------------*/
 
     h1 {
         font-size: var(--h1);
-        font-weight: var(--regular);
+        font-weight: var(--bold);
     }
 
     h1.slogan {
         font-size: var(--h3);
         margin: 0;
+        font-weight: var(--medium);
+        margin-top: 10px;
     }
 
     h2 {
@@ -68,24 +74,26 @@ body {
         font-size: var(--main-p);
         margin: 0;
     }
-  
+}
+
 /*----------------------------------- HEADER STYLE, GELDIG VOOR ELKE PAGINA --------------------------------------*/
 header {
     .logo{
         display: flex;
         align-items: center;
         .m{
-            margin-right: 15px;
-            height: 76px;
+            margin-right: 11px;
+            height: 56px;
             @media (min-width: 0px) {
                 margin-top: -10px;
             }
             @media (min-width: 1340px) {
-                margin-top: -25px;
+                margin-top: -16px;
             }
         }
         .illedoni{
             margin-top: 6px;
+            width: 220px;
             @media (min-width: 0px) {
                 display: none;
             }
@@ -101,7 +109,7 @@ header {
     }
     @media (min-width: 0px) {
         nav{
-            top: 15px;
+            top: calc(1vw + 5px);
             right: 10px; 
         }
         .rest {
@@ -109,8 +117,8 @@ header {
         }
         .list-button {
             position: sticky;
-            width: 40px;
-            height: 40px;
+            width: 33px;
+            height: 33px;
             #list-button-text {
                 display: none;
             }
@@ -119,22 +127,47 @@ header {
             }
         }
     }
+     @media (min-width: 450px) {
+        nav{
+            top: calc(1vw + 7px);
+            right: 10px; 
+        }
+    }
+    @media (min-width: 600px) {
+        nav{
+            top: calc(1vw + 10px);
+            right: 10px; 
+        }
+    }
+    @media (min-width: 900px) {
+        nav{
+            top: calc(1vw + 12px);
+            right: 10px; 
+        }
+    }
+    @media (min-width: 1100px) {
+        nav{
+            top: calc(1vw + 15px);
+            right: 10px; 
+        }
+    }
     @media (min-width: 1340px) {
         nav{
-            top: 25px;
+            top: calc(1vw + 15px);
             right: 25px;
         }
         .rest {
             display: inline-block;
         }
         .list-button {
-            width: 170px;
-            height: 40px;
+            width: 180px;
+            height: 33px;
             #list-button-text {
                 display: inline-block;
+                font-weight: var(--regular);
             }
             .save-icon{
-                margin-left: 5px;
+                margin-left: 10px;
             }
         }
     }
@@ -163,9 +196,8 @@ header {
     border-radius: 50px;
     padding: 5px;
     img {
-        margin-left: 10px;
         width: 15px;
-        height: 20px;
+        height: 19px;
     }
 }
 
@@ -175,10 +207,33 @@ header {
     justify-content: center;
     border-radius: 50%;
     border: 1px solid #E8E8E8;
-    height: 50px;
-    width: 50px;
+    height: 43px;
+    width: 43px;
     img {
-        width: 25px;
-        height: 30px;
+        width: 23px;
+        height: 25px;
+    }
+}
+
+/* -------------------------------- TIJDELIJKE LINK STYLING ----------------------------------- */
+a.VERWIJDERLATER {
+    position: fixed;
+    right: 20px;
+    z-index: 1001; 
+    background-color: var(--second-button-background-color);
+    color: var(--primary-color);
+    padding: 10px 15px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    
+    @media (min-width: 0px) {
+        top: 80px; 
+        bottom: auto;
+    }
+    
+    @media (min-width: 1340px) {
+        top: auto;
+        bottom: 20px;
     }
 }
