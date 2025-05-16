@@ -87,7 +87,7 @@ header {
             @media (min-width: 0px) {
                 margin-top: -10px;
             }
-            @media (min-width: 1340px) {
+            @media (min-width: 1240px) {
                 margin-top: -16px;
             }
         }
@@ -97,7 +97,7 @@ header {
             @media (min-width: 0px) {
                 display: none;
             }
-            @media (min-width: 1340px) {
+            @media (min-width: 1240px) {
                 display: block;
             }
         }
