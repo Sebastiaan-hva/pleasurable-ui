@@ -1,0 +1,23 @@
+.div-searchbar{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: white;
+    border: solid 1px black;
+    width: fit-content;
+    padding: 8px;
+    border-radius: 25px;
+}
+
+.input-searchbar{
+    border: none;
+    width: 166px;
+    background: none;
+}
+
+.button-searchbar{
+    border: none;
+    background: black;
+    padding: 8px 10px;
+    border-radius: 50%;
+}
