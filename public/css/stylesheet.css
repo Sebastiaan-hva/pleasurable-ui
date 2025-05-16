@@ -1,0 +1,239 @@
+html, body {
+    margin: 1vw;
+    padding: 0;
+    font-family: var(--font);
+    background-color: var(--main-background-color);
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-text-color);
+}
+
+body {
+    /*----------------------------------- ALLE VARIABELEN --------------------------------------*/
+
+    /* Lettertypen */
+    --font: 'Parkinsans', sans-serif;
+
+    /* Lettergroottes voor koppen */
+    --h1: 60px;
+    --h2: 40px;
+    --h3: 22px;
+    --h4: 30px;
+
+    --main-p: 16.6px;
+    --big-text: 20px;
+    --big-important-text: 24px;
+
+    /* Font weight */
+    --regular: 400;
+    --medium: 500;
+    --semi-bold: 600;
+    --bold: 800;
+
+    /* Kleuren */
+    --primary-color: #FEFCFA;
+    --main-text-color: #000000;
+    --alt-text-color: #FFFFFF;
+    --main-background-color: #F6F5F5;
+
+    /* Knoppen */
+    --button-background-color: #FFFFFF;
+    --second-button-background-color: #212121;
+
+    /*----------------------------------- VARIABELEN VOOR ALLE KNOPPEN EN ANDERE ELEMENTEN --------------------------------------*/
+
+    h1 {
+        font-size: var(--h1);
+        font-weight: var(--bold);
+    }
+
+    h1.slogan {
+        font-size: var(--h3);
+        margin: 0;
+        font-weight: var(--medium);
+        margin-top: 10px;
+    }
+
+    h2 {
+        font-size: var(--h2);
+    }
+
+    h3 {
+        font-size: var(--h3);
+        margin: 0 0 5px 0;
+        padding: 0;
+    }
+
+    p {
+        font-size: var(--main-p);
+        margin: 0;
+    }
+}
+
+/*----------------------------------- HEADER STYLE, GELDIG VOOR ELKE PAGINA --------------------------------------*/
+header {
+    .logo{
+        display: flex;
+        align-items: center;
+        .m{
+            margin-right: 11px;
+            height: 56px;
+            @media (min-width: 0px) {
+                margin-top: -10px;
+            }
+            @media (min-width: 1340px) {
+                margin-top: -16px;
+            }
+        }
+        .illedoni{
+            margin-top: 6px;
+            width: 220px;
+            @media (min-width: 0px) {
+                display: none;
+            }
+            @media (min-width: 1340px) {
+                display: block;
+            }
+        }
+    }
+    nav {
+        display: flex;
+        position: fixed; 
+        z-index: 1000; 
+    }
+    @media (min-width: 0px) {
+        nav{
+            top: calc(1vw + 5px);
+            right: 10px; 
+        }
+        .rest {
+            display: none;
+        }
+        .list-button {
+            position: sticky;
+            width: 33px;
+            height: 33px;
+            #list-button-text {
+                display: none;
+            }
+            .save-icon{
+                 margin: 0;
+            }
+        }
+    }
+     @media (min-width: 450px) {
+        nav{
+            top: calc(1vw + 7px);
+            right: 10px; 
+        }
+    }
+    @media (min-width: 600px) {
+        nav{
+            top: calc(1vw + 10px);
+            right: 10px; 
+        }
+    }
+    @media (min-width: 900px) {
+        nav{
+            top: calc(1vw + 12px);
+            right: 10px; 
+        }
+    }
+    @media (min-width: 1100px) {
+        nav{
+            top: calc(1vw + 15px);
+            right: 10px; 
+        }
+    }
+    @media (min-width: 1340px) {
+        nav{
+            top: calc(1vw + 15px);
+            right: 25px;
+        }
+        .rest {
+            display: inline-block;
+        }
+        .list-button {
+            width: 180px;
+            height: 33px;
+            #list-button-text {
+                display: inline-block;
+                font-weight: var(--regular);
+            }
+            .save-icon{
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+/*----------------------------------- BUTTONS --------------------------------------*/
+
+/* ALGEMENE BUTTON STYLES */
+
+.list-button, .profile-button {
+    font-family: var(--main-font);
+    font-weight: var(--semi-bold);
+    margin: 5px;
+    background-color: var(--button-background-color);
+    box-shadow: 5px 3px 10px rgb(0 0 0 / 0.2);
+    border-radius: 50px;
+}
+
+/* Andere buttonstijlen */
+
+.list-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #E8E8E8;
+    border-radius: 50px;
+    padding: 5px;
+    img {
+        width: 15px;
+        height: 19px;
+    }
+}
+
+.profile-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid #E8E8E8;
+    height: 43px;
+    width: 43px;
+    img {
+        width: 23px;
+        height: 25px;
+    }
+}
+
+/* -------------------------------- TIJDELIJKE LINK STYLING ----------------------------------- */
+a.VERWIJDERLATER {
+    position: fixed;
+    right: 20px;
+    z-index: 1001; 
+    background-color: var(--second-button-background-color);
+    color: var(--primary-color);
+    padding: 10px 15px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    
+    @media (min-width: 0px) {
+        top: 80px; 
+        bottom: auto;
+    }
+    
+    @media (min-width: 1340px) {
+        top: auto;
+        bottom: 20px;
+    }
+}
