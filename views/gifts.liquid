@@ -1,50 +1,69 @@
-{% render 'head.liquid' %}
+{% render 'partials/head.liquid', title: 'Gift Detail Page' %}
 
-{% render 'header.liquid' %}
-
-<main>
+<main class="gifts-grid">
 <picture>
 
 </picture>
 
-<article>
-<h1>dynamische naam</h1>
-<h2>subtekset</h2>
-<p>prijs</p>
-<p>dynamische description</p>
-
-
+<article class="grid-item">
+    <h1>dynamische naam</h1>
+    <h2>subtekset</h2>
+    <p>prijs</p>
+    <p>dynamische description</p>
 </article>
 
-<article>
+<article class="grid-item" class="article-why-this-gift">
+
     <picture>
 
     </picture>
     <h3>Why this gift</h3>
-    <p></p>
+    <p>description 1</p>
 
     <picture>
 
     </picture>
     <h3>Good to know</h3>
-    <p></p>
+    <p>description 2</p>
 
 </article>
 
 
-<section>
+<article class="grid-item" class="article-safe-to-give">
+    <h3>Safe to Give</h3>
+        <p>wooow</p>
+        <p>suprise factor</p>
+        <picture>
 
-</section>
+        </picture>
 
-<section>
 
-</section>
+        <p>doom</p>
+        <p>to be trashed</p>
 
-<section>
+        <p>new</p>
 
-</section>
+</article>
+
+<article class="grid-item" class="article-where-to-find-it">
+
+    <h3> Where to find it </h3>
+
+    <p>Winkel + prijs</p>
+    <p>milledoni rating</p>
+    {% comment %} rating component {% endcomment %}
+
+    <p>Winkel + prijs</p>
+    <p>milledoni rating</p>
+    {% comment %} rating component {% endcomment %}
+</article>
 
 </main>
 
+<section>
+<h2>You may also like</h2>
+{% comment %} cards maybe {% endcomment %}
+</section>
 
-{% render 'foot.liquid' %}
+</body>
+</html>
