@@ -1,0 +1,36 @@
+.gifts-grid{
+    display:grid;
+    grid-template-rows: repeat(5, minmax(auto, 100%));
+    min-width:400px;
+    max-width:50vw;
+    gap:1em;
+}
+
+@media (width > 600px) {
+    .gifts-grid{
+        margin-left:25vw;
+        margin-right:25vw;
+    }
+}
+
+.grid-item { 
+    margin: 0; 
+    padding: 5px; 
+    border-bottom: 1px solid #000;
+}
+
+.grid-item:nth-of-type(1) {
+    text-align:center;
+}
+
+.article-why-this-gift{
+/* background-color: red; */
+}
+
+.article-safe-to-give{
+
+}
+
+.article-where-to-find-it{
+
+}
