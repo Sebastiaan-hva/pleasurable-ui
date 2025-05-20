@@ -1,0 +1,225 @@
+/* -------------------------------- MAIN (Voor Homepage)----------------------------------- */
+
+main.homepage {
+    @media (min-width: 0px) {
+        @supports (display: grid){
+            display: grid;
+        }
+    }
+
+    @media (min-width: 1340px) {
+        @supports (display: grid){
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 0px 0px;
+            position: relative;
+            min-height: 100vh;
+        }
+    }
+
+    /* -------------------------------- MAIN CONTENT ----------------------------------- */
+    section.main-content {
+        /* boven | rechts | onder | links */
+        padding: 6px 15px 15px 15px;
+        gap: 2px;
+        background-color: var(--results-tab-background-color);
+        border-radius: 20px;
+        margin-bottom: 80px; /* Ruimte voor vaste chat-tab op mobiel */
+
+        @media (min-width: 1340px) {
+            margin-bottom: 0; /* Reset margin op desktop */
+        }
+
+        @media (min-width: 0px) {
+            @supports (display: grid){
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 520px) {
+            @supports (display: grid){
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 744px) {
+            @supports (display: grid){
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 1084px) {
+            @supports (display: grid){
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 1340px) {
+            display: grid;
+            @supports (display: grid){
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+        
+        .gift-box {
+            position: relative;
+            background-color: var(--primary-color);
+            box-shadow: 5px 3px 10px rgb(0 0 0 / 0.2);
+            margin-top: 10px;
+            padding: 10px;
+
+            @media (min-width: 0px){
+                width: 250px;
+                height: 360px;
+            }   
+
+            @media (min-width: 1060px){
+                width: 310px;
+                height: 467px;
+            }   
+        }
+            
+        form {
+            /* Absoluut voor betere toegankelijkheid */
+            position: absolute;
+            top: 5px;
+            left: 5px;
+        }
+
+        img.cover-image {
+            width: fit-content;
+            padding: 3px;
+            display: block;
+            margin: 0 auto;
+        
+
+            @media (min-width: 0px){
+                height: 250px;
+                width: 250px;
+            }
+                
+            @media (min-width: 1060px){
+                height: 295px;
+                width: 295px;  
+            }
+        }
+
+        .bottom-row {
+            margin-top: 10px;
+
+            @media (min-width: 0px){
+                display: none;
+            }
+
+            @media (min-width: 1060px){
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                margin-left: -10px;
+            }
+
+            img.user-icon-1,
+            img.user-icon-4 {
+                width: 38px;
+                height: 38px;
+            }
+
+            img.user-icon-4 {
+                margin-left: -30px;
+            }
+
+            img.gift-icon {
+                width: 30px;
+                height: 30px;
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+
+p{
+    span{
+        margin-right: 5px;
+    }
+}
+
+/* -------------------------------- CREATE LIST CARD ----------------------------------- */
+.create-list-card{
+    border-radius: 15px;
+    background-color: var(--create-list-card);
+    margin-top: 10px;
+    box-shadow: 5px 3px 10px rgb(0 0 0 / 0.2);
+    padding: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    @media (min-width: 0px){
+        width: 250px;
+        height: 360px;
+    }
+
+    @media (min-width: 1060px){
+        width: 310px;
+        height: 467px;
+    }
+    
+    p:first-of-type{
+        font-size: var(--h4);
+        font-weight: var(--semi-bold);
+        color: var(--primary-color);
+        text-align: center;
+    }
+    
+    p:nth-of-type(2){
+        position: absolute;
+        bottom: 5%;
+        font-size: var(--big-important-text);
+        color: var(--primary-color);
+        background-color: var(--second-button-background-color);
+        padding: 10px;
+        border-radius: 40px;
+    }
+    
+    img{
+        position: absolute;
+    }
+    
+    .flower{
+        bottom: 20%;
+        left: 10%;
+
+        @media (min-width: 0px){
+            width: 99px;
+            height: 108px;
+        }
+
+        @media (min-width: 1060px){
+            width: 129px;
+            height: 138px;
+        }
+
+    }
+    
+    .woman{
+        bottom: 35%;
+
+        @media (min-width: 0px){
+            width: 122px;
+            height: 122px;
+            left: 45%;
+        }
+
+        @media (min-width: 1060px){
+            width: 162px;
+            height: 162px;
+            left: 35%;
+        }
+    }
+}

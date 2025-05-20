@@ -1,0 +1,33 @@
+{% for gift in allMilledoniProducts %}
+    <a href="/gift/{{ gift.id }}"> <!-- Eigen naam zodat deze content lijkt alsof het uit de kaart komt-->
+        <article class="gift-box">
+            <img src="{{ gift.image }}" alt="" class="cover-image" height="250" width="250" {% if forloop.index > 9  %} loading="lazy" {% endif %}> <!-- Na 9 van dit soort kaarten worden ze ingeladen met loading lazy -->
+            <h3>{{ gift.name | truncate: 40}}</h3> <!-- Truncate laat de max text karaters tot 40, dit zorgt ervoor dat geen kaartjes tekst uit de box hebben -->
+            <p class="card-spotter-text">Spotter: {{ gift.spotter }}</p>
+            <footer class="bottom-row">
+                <img src="/assets/girl-1.svg" alt="" class="user-icon-1" height="38" width="38"{% if forloop.index > 12  %} loading="lazy" {% endif %}>
+                <img src="/assets/user-4.svg" alt="" class="user-icon-4" height="38" width="38"{% if forloop.index > 12  %} loading="lazy" {% endif %}>
+                <p>+<span>{{ gifts.saved | default: 35}}</span>Saved</p> <!-- Default zet de standaard van de variablen op een vaste waarde van iets als er niks is -->
+                <img src="/assets/gift-icon.svg" alt="" class="gift-icon" width="30" height="30">
+                <p>+<span>{{ gift.given | default: 11 }}</span>Given</p {% if forloop.index > 12  %} loading="lazy" {% endif %}>
+            </footer>
+            <!-- Check of de gift.id bestaat in de savedProducts array -->
+            {% assign savedProductIds = savedProducts | map: 'milledoni_products_id' %} <!-- Voegt array toe aan de map milledoni_productis_id !-->
+            {% if savedProductIds contains gift.id %} <!-- Als een array (dus savedProductIds) een bepaald ID Contained voer dan dit uit: !-->
+                <form method="POST" action="/update-gift/{{ gift.id }}" data-enhanced="form-{{ gift.id }}">
+                    <button type="SUBMIT" name="giftId" class="add-list-button" aria-label="Remove from your list" value="{{ gift.id }}" aria-pressed="true"><span>-</span></button>
+                </form>
+                <noscript>
+                    <!-- voer dit uit als de form dus niet werkt!!!-->
+                </noscript>
+            {% else %}
+                <form method="POST" action="/update-gift/{{ gift.id }}" data-enhanced="form-{{ gift.id }}">
+                    <button type="SUBMIT" class="remove-list-button" aria-label="Add to your List" aria-pressed="false"><span>+</span></button>
+                </form>
+                <noscript>
+                    <!-- voer dit uit als de form dus niet werkt!!!-->
+                </noscript>
+            {% endif %}
+        </article>
+    </a>
+{% endfor %}
