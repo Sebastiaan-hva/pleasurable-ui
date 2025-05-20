@@ -41,6 +41,7 @@ body {
     --main-text-color: #000000;
     --alt-text-color: #FFFFFF;
     --main-background-color: #F6F5F5;
+    --create-list-card: #868686;
 
     /* Knoppen */
     --button-background-color: #FFFFFF;
@@ -81,7 +82,7 @@ header {
     .logo{
         display: flex;
         align-items: center;
-        .m{
+        .milledoni-logo{
             margin-right: 11px;
             height: 56px;
             @media (min-width: 0px) {
@@ -91,7 +92,7 @@ header {
                 margin-top: -16px;
             }
         }
-        .illedoni{
+        .milledoni-logo-tekst{
             margin-top: 6px;
             width: 220px;
             @media (min-width: 0px) {
@@ -109,7 +110,7 @@ header {
     }
     @media (min-width: 0px) {
         nav{
-            top: calc(1vw + 5px);
+            top: calc(1vw + 3px);
             right: 10px; 
         }
         .rest {
@@ -135,19 +136,19 @@ header {
     }
      @media (min-width: 450px) {
         nav{
-            top: calc(1vw + 7px);
+            top: calc(1vw + 5px);
             right: 10px; 
         }
     }
     @media (min-width: 600px) {
         nav{
-            top: calc(1vw + 10px);
+            top: calc(1vw + 8px);
             right: 10px; 
         }
     }
     @media (min-width: 900px) {
         nav{
-            top: calc(1vw + 12px);
+            top: calc(1vw + 10px);
             right: 10px; 
         }
     }
@@ -186,6 +187,16 @@ header {
 /*----------------------------------- BUTTONS --------------------------------------*/
 
 /* ALGEMENE BUTTON STYLES */
+
+.add-list-button, .remove-list-button {
+    font-family: var(--main-font);
+    font-weight: var(--semi-bold);
+    margin: 5px;
+    background-color: var(--button-background-color);
+    box-shadow: 5px 3px 10px rgb(0 0 0 / 0.2);
+    width: 28px;
+    height: 28px;
+}
 
 .list-button, .profile-button {
     font-family: var(--main-font);

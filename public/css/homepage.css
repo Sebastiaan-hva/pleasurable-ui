@@ -1,5 +1,4 @@
 /* -------------------------------- MAIN (Voor Homepage)----------------------------------- */
-
 main.homepage {
     @media (min-width: 0px) {
         @supports (display: grid){
@@ -26,18 +25,7 @@ main.homepage {
         border-radius: 20px;
         margin-bottom: 80px; /* Ruimte voor vaste chat-tab op mobiel */
 
-        @media (min-width: 1340px) {
-            margin-bottom: 0; /* Reset margin op desktop */
-        }
-
-        @media (min-width: 0px) {
-            @supports (display: grid){
-                display: grid;
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (min-width: 520px) {
+        @media (min-width: 550px) {
             @supports (display: grid){
                 display: grid;
                 grid-template-columns: 1fr 1fr;
@@ -51,7 +39,7 @@ main.homepage {
             }
         }
 
-        @media (min-width: 1084px) {
+        @media (min-width:820px) {
             @supports (display: grid){
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
@@ -59,6 +47,7 @@ main.homepage {
         }
 
         @media (min-width: 1340px) {
+            margin-bottom: 0; /* Reset margin op desktop */
             display: grid;
             @supports (display: grid){
                 display: grid;
@@ -99,8 +88,8 @@ main.homepage {
         
 
             @media (min-width: 0px){
-                height: 250px;
-                width: 250px;
+                height: 240px;
+                width: 240px;
             }
                 
             @media (min-width: 1060px){
@@ -161,6 +150,11 @@ p{
     justify-content: center;
 
     @media (min-width: 0px){
+        display: none;
+    }
+
+    @media (min-width: 550px){
+        display: block;
         width: 250px;
         height: 360px;
     }
