@@ -1,1 +1,28 @@
-{% render 'partials/head.liquid', title: 'Homepage' slogan: 'Finding and sharing gift ideas' %}
+{% render 'partials/head.liquid', title: 'Milledoni Home', slogan: 'Finding and sharing gift ideas' %}
+
+<head>
+    <link rel="stylesheet" href="/css/homepage.css">
+</head>
+
+<main class="homepage">
+
+<section class="chat-box">
+
+</section>
+
+<!-- Core functionaliteit van de site, laat alle resultaten zien de je van de AI zou krijgen (Voor nu statisch) -->
+<section class="main-content">
+    <a href="/profile">
+        <article class="create-list-card">
+            <p>Create a list for your best friend</p>
+            <img src="/assets/bloemetje.svg" alt="" class="flower" height="138" width="129" loading="eager">
+            <img src="/assets/girl-1.svg" alt="" class="woman" height="162" width="162" loading="eager">
+            <p>Register or Log in</p>
+        </article>
+    </a>
+    {% include 'partials/imgcard.liquid'%}
+</section>
+
+</main>
+
+{% render 'partials/foot.liquid'%}
