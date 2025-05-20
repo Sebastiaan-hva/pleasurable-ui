@@ -145,16 +145,15 @@ p{
     margin-top: 10px;
     box-shadow: 5px 3px 10px rgb(0 0 0 / 0.2);
     padding: 10px;
-    position: relative;
-    display: flex;
-    justify-content: center;
 
     @media (min-width: 0px){
         display: none;
     }
 
     @media (min-width: 550px){
-        display: block;
+        display: flex;
+        position: relative;
+        justify-content: center;
         width: 250px;
         height: 360px;
     }
