@@ -39,7 +39,7 @@ app.get('/', async function (request, response) {
   
    // Render index.liquid uit de Views map
    // Geef hier eventueel data aan mee
-   response.render('index.liquid' , {allMilledoniProducts: all_Products, savedProducts: saved_products });
+   response.render('index.liquid', {allMilledoniProducts: all_Products, savedProducts: saved_products });
 })
 
 // ----------------------------------------------- SAVE GIFT CODE  -----------------------------------------------//
@@ -98,9 +98,23 @@ app.get('/savedgifts', async function (request, response) {
   }
 });
 
-app.get('/gifts', async function (request, response) {
-  response.render('gifts.liquid')
-})
+// ----------------------------------------------- DETAIL PAGE SPECIFIC GIFTS -----------------------------------------------// 
+
+app.get('/gifts/:slug', async function (request, response) {
+  const slug = request.params.slug;
+
+  const giftURL = `https://fdnd-agency.directus.app/items/milledoni_products/?fields=id,slug,name,image,amount,tags,shop_name,spotter,description,url&filter={"slug":"${slug}"}`;
+  const giftResponse = await fetch(giftURL);
+  const giftJSON = await giftResponse.json();
+
+  const gift = giftJSON.data[0];
+
+  if (!gift) {
+    return response.status(404).send('Gift not found');
+  }
+
+  response.render('gifts.liquid', { giftResponse: gift });
+});
 
 // Stel het poortnummer in waar Express op moet gaan luisteren
 // Lokaal is dit poort 8000; als deze applicatie ergens gehost wordt, waarschijnlijk poort 80
@@ -108,5 +122,5 @@ app.set('port', process.env.PORT || 8000)
 
 // Start Express op, gebruik daarbij het zojuist ingestelde poortnummer op
 app.listen(app.get('port'), function () {
-  console.log(`Project draait via http://localhost:${app.get('port')}/\n\nSucces deze sprint. En maak mooie dingen! 🙂`)
+  console.log(`Project draait via http://localhost:${app.get('port')}/\n\n`)
 })

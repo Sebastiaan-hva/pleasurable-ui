@@ -1,4 +1,7 @@
+
+
 .gifts-grid{
+    margin-top:.5em;
     display:grid;
     grid-template-rows: repeat(5, minmax(auto, 100%));
     min-width:400px;
@@ -6,13 +9,22 @@
     gap:1em;
 }
 
+.detail-top{
+    margin:2.5em;
+}
+
 @media (width > 600px) {
+    .gifts-grid{
+        margin-left:10vw;
+        margin-right:10vw;
+    }
+}
+@media (width > 800px) {
     .gifts-grid{
         margin-left:25vw;
         margin-right:25vw;
     }
 }
-
 .grid-item { 
     margin: 0; 
     padding: 5px; 
@@ -21,6 +33,13 @@
 
 .grid-item:nth-of-type(1) {
     text-align:center;
+}
+
+
+.detail-main-image{
+    /* position: relative; */
+    margin-left:15vw;
+    margin-right:15vw;
 }
 
 .article-why-this-gift{
@@ -34,3 +53,80 @@
 .article-where-to-find-it{
 
 }
+
+.site{
+    grid-area:site;
+}
+
+.price{
+    grid-area:price;
+}
+
+.article-where-to-find-it-grid h5{
+    grid-area:milledoni;
+}
+.article-where-to-find-it-grid form{
+    grid-area:rating
+}
+
+.article-where-to-find-it-grid{
+margin-left:2%;
+display:grid;
+grid-template-columns: 20vw 1fr;
+grid-template-areas: 
+'site  price'
+'milledoni  rating'
+}
+
+
+/* rating */
+
+			main > * * {
+            padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+			}
+
+			@supports selector(::after) and selector(:has(*)) and (--custom: properties) {
+			.container {
+				display: flex;
+				gap: 1rem;
+			}
+
+			label {
+				--star-empty: url(../assets/gift-empty.svg);
+				--star-filled: url(../assets/gift.svg);
+				display: flex;
+				align-items: center;
+				flex-wrap: wrap;
+				flex-direction: column;
+			}
+
+			input[type="radio"] {
+				height: 2rem;
+				padding: 0 0.25rem;
+				aspect-ratio: 1;
+				display: grid;
+				place-content: center;
+				cursor: pointer;
+				appearance: none;
+			}
+
+			input[type="radio"]::after {
+				content: "";
+				background: var(--star-empty) no-repeat center;
+				height: inherit;
+				aspect-ratio: 1;
+				transition: background-image 0.3s ease;
+				z-index: 1;
+				cursor: pointer;
+			}
+
+			.container:has(input[type="radio"]:is(:hover, :focus, :checked)) label:has(input[type="radio"]:is(:hover, :focus, :checked)) ~ label input[type="radio"]::after {
+				background: var(--star-empty);
+			}
+			input[type="radio"]:is(:hover, :focus, :checked)::after,
+			.container:has(input[type="radio"]:is(:hover, :focus, :checked)) label:not(:has(input[type="radio"]:is(:hover, :focus, :checked)) ~ label) input[type="radio"]::after {
+				background: var(--star-filled);
+			}
+		}
