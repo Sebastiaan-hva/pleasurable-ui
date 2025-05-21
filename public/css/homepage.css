@@ -6,7 +6,7 @@ main.homepage {
         }
     }
 
-    @media (min-width: 1340px) {
+    @media (min-width: 1240px) {
         @supports (display: grid){
             display: grid;
             grid-template-columns: 1fr 2fr;
@@ -18,6 +18,7 @@ main.homepage {
 
     /* -------------------------------- MAIN CONTENT ----------------------------------- */
     section.main-content {
+        margin-top: var(--header-height);
         /* boven | rechts | onder | links */
         padding: 6px 15px 15px 15px;
         gap: 2px;
@@ -46,7 +47,7 @@ main.homepage {
             }
         }
 
-        @media (min-width: 1340px) {
+        @media (min-width: 1240px) {
             margin-bottom: 0; /* Reset margin op desktop */
             display: grid;
             @supports (display: grid){
@@ -201,18 +202,19 @@ p{
     }
     
     .woman{
-        bottom: 35%;
+        bottom: 30%;
 
         @media (min-width: 0px){
             width: 122px;
             height: 122px;
-            left: 45%;
+            left: 40%;
         }
 
         @media (min-width: 1060px){
             width: 162px;
             height: 162px;
             left: 35%;
+            bottom: 35%;
         }
     }
 }
