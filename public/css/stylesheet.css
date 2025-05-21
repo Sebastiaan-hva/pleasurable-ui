@@ -98,8 +98,9 @@ header {
             margin-top: 7px;
         }
         .milledoni-logo{
-            margin-right: 11px;
+            margin-right: 10px;
             height: 56px;
+            width: 44px;
             @media (min-width: 0px) {
                 margin-top: -10px;
             }
@@ -107,6 +108,7 @@ header {
         .milledoni-logo-tekst{
             margin-top: 20px;
             width: 220px;
+            height: 35px;
             @media (min-width: 0px) {
                 display: none;
             }
