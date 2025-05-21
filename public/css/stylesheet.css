@@ -47,6 +47,9 @@ body {
     --button-background-color: #FFFFFF;
     --second-button-background-color: #212121;
 
+    /* Header height */
+    --header-height: 81.06px;
+
     /*----------------------------------- VARIABELEN VOOR ALLE KNOPPEN EN ANDERE ELEMENTEN --------------------------------------*/
 
     h1 {
@@ -54,11 +57,17 @@ body {
         font-weight: var(--bold);
     }
 
-    h1.slogan {
+    p.slogan {
         font-size: var(--h3);
         margin: 0;
         font-weight: var(--medium);
         margin-top: 10px;
+            @media (min-width: 0px) {
+                display: none;
+            }
+            @media (min-width: 820px) {
+                display: block;
+            }
     }
 
     h2 {
@@ -79,22 +88,27 @@ body {
 
 /*----------------------------------- HEADER STYLE, GELDIG VOOR ELKE PAGINA --------------------------------------*/
 header {
+    height: calc(2vw + var(--header-height));
+    position: fixed;
+    z-index: 1000;
     .logo{
         display: flex;
         align-items: center;
+        @media (min-width: 820px) {
+            margin-top: 7px;
+        }
         .milledoni-logo{
-            margin-right: 11px;
+            margin-right: 10px;
             height: 56px;
+            width: 44px;
             @media (min-width: 0px) {
                 margin-top: -10px;
             }
-            @media (min-width: 1240px) {
-                margin-top: -16px;
-            }
         }
         .milledoni-logo-tekst{
-            margin-top: 6px;
+            margin-top: 20px;
             width: 220px;
+            height: 35px;
             @media (min-width: 0px) {
                 display: none;
             }
@@ -146,6 +160,12 @@ header {
             right: 10px; 
         }
     }
+    @media (min-width: 820px) {
+        width: 100%;
+        background-color: var(--main-background-color);
+        top: 0;
+    }
+
     @media (min-width: 900px) {
         nav{
             top: calc(1vw + 10px);
@@ -158,7 +178,8 @@ header {
             right: 10px; 
         }
     }
-    @media (min-width: 1340px) {
+    @media (min-width: 1240px) {
+        background-color: transparent;
         nav{
             top: calc(1vw + 15px);
             right: 25px;
@@ -234,18 +255,4 @@ header {
         width: 23px;
         height: 25px;
     }
-}
-
-/* -------------------------------- TIJDELIJKE LINK STYLING ----------------------------------- */
-a.REMOVE-LATER {
-    position: fixed;
-    right: 20px;
-    z-index: 1001; 
-    background-color: var(--second-button-background-color);
-    color: var(--primary-color);
-    padding: 10px 15px;
-    border-radius: 30px;
-    text-decoration: none;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    bottom: 20px;
 }
