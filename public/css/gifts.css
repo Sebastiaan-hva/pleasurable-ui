@@ -139,10 +139,15 @@ grid-template-areas:
   user-select: none;
 }
 
+@media (max-width:1239px) {
+	.icon{
+		display:none;
+	}
+}
 
 @media (min-width: 1240px) {
-  #list-button-text {
-    animation: none;
+	#list-button-text {
+    	animation: none;
 }
 
 .list-button:hover #list-button-text {
