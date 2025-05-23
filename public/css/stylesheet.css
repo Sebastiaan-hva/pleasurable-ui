@@ -53,6 +53,7 @@ body {
     /* MISC */
     --flower-color: #EAEAEA;
     --clockwise: large cw; /* Large clockwise, Je kan ook: Large (Of small) ccw (Counter Clock Wise)*/
+    --random-degrees: 180deg;
 
     /*----------------------------------- VARIABELEN VOOR ALLE KNOPPEN EN ANDERE ELEMENTEN --------------------------------------*/
 

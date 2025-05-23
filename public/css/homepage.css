@@ -245,11 +245,9 @@ p{
   }
 }
 
-/* ------- FLOWER -------- */
+/* ------- FLOWER ANIMATION-------- */
 
 .flowerAni {
-    position: relative;
-    z-index: 99999;
     animation-name: flowerAni;
     animation-timing-function: ease-in;
     animation-duration: 0.95s;
@@ -258,9 +256,11 @@ p{
 
 @keyframes flowerAni{
   0%{
+    rotate: 0deg;
     transform: scale(1);
   }
   100%{
+    rotate: var(--random-degrees);
     transform: scale(60);
   }
 }
