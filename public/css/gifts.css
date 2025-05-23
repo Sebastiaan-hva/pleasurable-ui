@@ -130,3 +130,85 @@ grid-template-areas:
 				background: var(--star-filled);
 			}
 		}
+
+/* animatie op saved list button */
+
+.list-button {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+@media (max-width:1239px) {
+	.icon{
+		display:none;
+	}
+}
+
+@media (min-width: 1240px) {
+	#list-button-text {
+    	animation: none;
+}
+
+.list-button:hover #list-button-text {
+    animation: wiggle 1s ease-in-out forwards;
+}
+
+#list-button-text.morphed {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.list-button .icon {
+    position: absolute;
+    top: 50%;
+    left: 35%; 
+    width: 32px;
+    height: 32px;
+    transform: translateY(-50%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    z-index: 10;
+  }
+
+#list-button-text.morphed + .icon {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+
+@keyframes wiggle {
+	0%, 100% { transform: rotate(0deg); }
+	15% { transform: rotate(15deg); }
+	30% { transform: rotate(-15deg); }
+	45% { transform: rotate(10deg); }
+	60% { transform: rotate(-10deg); }
+	75% { transform: rotate(5deg); }
+	90% { transform: rotate(-5deg); }
+}
+
+
+::view-transition-old(root), ::view-transition-new(root) {
+  	animation-duration: 0.3s;
+}
+
+::view-transition-old(root) {
+  	animation-name: fadeOut;
+}
+
+::view-transition-new(root) {
+  	animation-name: fadeIn;
+}
+
+@keyframes fadeOut {
+  	from { opacity: 1; }
+  	to { opacity: 0; }
+}
+
+@keyframes fadeIn {
+  	from { opacity: 0; }
+  	to { opacity: 1; }
+}
