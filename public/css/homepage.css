@@ -140,12 +140,14 @@ p{
 }
 
 /* -------------------------------- CREATE LIST CARD ----------------------------------- */
+
 .create-list-card{
     border-radius: 15px;
     background-color: var(--create-list-card);
     margin-top: 10px;
     box-shadow: 5px 3px 10px rgb(0 0 0 / 0.2);
     padding: 10px;
+    animation: rotate 1.4s infinite ease-in-out;
 
     @media (min-width: 0px){
         display: none;
@@ -181,27 +183,34 @@ p{
         border-radius: 40px;
     }
     
-    img{
-        position: absolute;
-    }
-    
     .flower{
+        position: absolute;
         bottom: 20%;
         left: 10%;
+        background: var(--flower-color);
+        aspect-ratio: 1;
+        clip-path: shape(from 75.4762724747% 50%, 
+                   arc to 57.872601148% 74.229374948% of 18.5095954079% var(--clockwise), 
+                   arc to 29.3892626146% 64.974577244% of 18.5095954079% var(--clockwise), 
+                   arc to 29.3892626146% 35.025422756% of 18.5095954079% var(--clockwise), 
+                   arc to 57.872601148% 25.770625052% of 18.5095954079% var(--clockwise), 
+                   arc to 75.4762724747% 50% of 18.5095954079% var(--clockwise));
+                   
 
         @media (min-width: 0px){
-            width: 99px;
-            height: 108px;
+            width: 109px;
+            height: 118px;
         }
 
         @media (min-width: 1060px){
-            width: 129px;
-            height: 138px;
+            width: 139px;
+            height: 148px;
         }
 
     }
     
     .woman{
+        position: absolute;
         bottom: 30%;
 
         @media (min-width: 0px){
@@ -218,3 +227,78 @@ p{
         }
     }
 }
+
+/* -------------------------------- CREATE LIST:: ANIMATIE ----------------------------------- */
+
+/* ------- CARD STANDALONE -------- */
+
+
+@keyframes rotate {
+  0%, 100% {
+    rotate: 0deg;
+  }
+  25% {
+    rotate: 2deg; 
+  }
+  75% {
+    rotate: -2deg; 
+  }
+}
+
+/* ------- FLOWER -------- */
+
+.flowerAni {
+    position: relative;
+    z-index: 99999;
+    animation-name: flowerAni;
+    animation-timing-function: ease-in;
+    animation-duration: 0.95s;
+    cursor: none;
+}
+
+@keyframes flowerAni{
+  0%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(60);
+  }
+}
+
+/* ------- CARD HOVER WITH CLICK ANIMATION -------- */
+
+.create-list-card:hover{
+  background-color: var(--alt-text-color);
+  border-color: black;
+  cursor: pointer;
+    p:first-of-type{
+        color: black;
+    }
+    .woman{
+        filter: blur(1px);
+    }
+}
+
+.clicked{
+  animation-name: bounce;
+  animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+  animation-duration: 0.4s;
+  animation-iteration-count: 1;
+}
+
+@keyframes bounce {
+  0%, 50%, 57%, 64% {
+    transform: scale(1, 1);
+  }
+  10% {
+    transform: scale(1.05, 0.9);
+  }
+  30% {
+    transform: scale(0.9, 1.05);
+  }
+  100%{
+    transform: scale(1, 1.5);
+  }
+}
+
+

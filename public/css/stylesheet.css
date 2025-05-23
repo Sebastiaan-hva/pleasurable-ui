@@ -17,10 +17,10 @@ a {
 body {
     /*----------------------------------- ALLE VARIABELEN --------------------------------------*/
 
-    /* Lettertypen */
+    /* FONT TYPE */
     --font: 'Parkinsans', sans-serif;
 
-    /* Lettergroottes voor koppen */
+    /* LETTER SIZES */
     --h1: 60px;
     --h2: 40px;
     --h3: 22px;
@@ -36,19 +36,23 @@ body {
     --semi-bold: 600;
     --bold: 800;
 
-    /* Kleuren */
+    /* COLORS */
     --primary-color: #FEFCFA;
     --main-text-color: #000000;
     --alt-text-color: #FFFFFF;
     --main-background-color: #F6F5F5;
     --create-list-card: #868686;
 
-    /* Knoppen */
+    /* BUTTONS */
     --button-background-color: #FFFFFF;
     --second-button-background-color: #212121;
 
-    /* Header height */
+    /* HEADER HEIGHT */
     --header-height: 81.06px;
+
+    /* MISC */
+    --flower-color: #EAEAEA;
+    --clockwise: large cw; /* Large clockwise, Je kan ook: Large (Of small) ccw (Counter Clock Wise)*/
 
     /*----------------------------------- VARIABELEN VOOR ALLE KNOPPEN EN ANDERE ELEMENTEN --------------------------------------*/
 
@@ -254,5 +258,17 @@ header {
     img {
         width: 23px;
         height: 25px;
+    }
+}
+
+
+/*----------------------------------- BUTTON ANIMATIE --------------------------------------*/
+
+.list-button:hover, .profile-button:hover {
+    color: var(--alt-text-color);
+    background-color: var(--second-button-background-color);
+    animation: rotate infinite 0.3s ease-in-out;
+    img{
+        filter: brightness(1000);
     }
 }
