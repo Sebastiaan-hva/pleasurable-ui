@@ -11,10 +11,14 @@
 
 
 <main class="gifts-grid">
-    {% comment %} <picture> {% endcomment %}
+    {% comment %} if statement met als er eeen giftResponse.img is doe dit <source srcset="{{ giftResponse.image }}?format=avif" type="image/avif">
+     else doe normaal imgage inladen. {% endcomment %}
+    <picture>
+    
     <img class="detail-main-image" src="{{ giftResponse.image }}" alt="{{ giftResponse.name }}" alt="" height="400" width="400">
-    {% comment %} </picture> {% endcomment %}
+    </picture>
 
+    
     <article class="grid-item detail-top">
         <h1>{{ giftResponse.name }}</h1>
         <p> tags: {{ giftResponse.tags  }}</p>
@@ -58,14 +62,14 @@
         <section class="article-where-to-find-it-grid">
             <p>{{ giftResponse.shop_name }}</p>  
             <p>{{ giftResponse.amount }} $</p>
-            <h5>milledoni rating</h5>
 
             <form method="post">
+                <legend>milledoni rating</legend>
                 <div class="container">
                     <label>
                         <input type="radio" name="rating" value="1" />
                         1 sterren
-                        </label>
+                    </label>
                     <label>
                         <input type="radio" name="rating" value="2" />
                         2 sterren
@@ -87,11 +91,11 @@
         </section>
 
         <section class="article-where-to-find-it-grid">
-            <p class="site">{{ giftResponse.shop_name }} $</p>  
-            <h5>milledoni rating</h5>
-
+            <p class="site">{{ giftResponse.shop_name }} </p>  
+            <p>{{ giftResponse.amount }} $</p>
             
             <form method="post">
+                <legend>milledoni rating</legend>
                 <div class="container">
                     <label>
                         <input type="radio" name="rating" value="1" />
