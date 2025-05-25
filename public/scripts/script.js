@@ -4,16 +4,16 @@ let animationDuration = 1400
 
 let createListCard = document.querySelector('.create-list-card');
 let flower = document.querySelector('.flower'); 
-let DOM = document.documentElement;
 let header = document.querySelector('header');
+
 let giftBoxes = document.querySelectorAll('.gift-box'); // Dit selecteerd alle gift-boxes, Bron: https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
 let randomNumber = null; // https://css-tricks.com/random-numbers-css/: Is nu niks maar wordt in de listAni aangepast tot een random number.
 
 giftBoxes.forEach(giftBox => {
-    giftBox.addEventListener('click', giftBoxAni,);
+    giftBox.addEventListener('click', giftBoxAni);
 }); // Array Loop waarin een eventlistener word toegevoegd voor elke giftBox
 
-createListCard.addEventListener('click', listAni,);
+createListCard.addEventListener('click', listAni);
 
 function listAni() {
 
@@ -24,7 +24,7 @@ function listAni() {
             console.log("Animatie begint");
             createListCard.classList.remove('clicked');
 
-            // Zoekt een willekeurig nummer tussen 180 en -180 als het maar niet tussen 45 en -45 zit. Zowel, dan probeert de loop opnieuw.
+            // Zoekt een willekeurig nummer tussen 180 en -180 als het maar niet tussen 25 en -25 zit. Zowel, dan probeert de loop opnieuw.
             // Mijn test: https://codepen.io/Lutrian1/pen/yyNBEjj
 
             do{
@@ -39,21 +39,22 @@ function listAni() {
 
             //Z-Index aanpassen en ervoor zorgen dat de DOM niet scrollbaar is
             flower.style.zIndex = '1000';
-            header.style.zIndex = '-1000'
-            
-            setTimeout(() => {
-                DOM.style.position  = 'fixed';
-            }, 350);
-            
+            header.style.zIndex = '-1000';   
+
+            giftBoxes.forEach(giftBox => {
+                giftBox.style.zIndex = '-1000'
+            });
 
         }, 250); // setTimeout is de duur van de 'click animatie'
 
         setTimeout(() => {
             flower.classList.remove('flowerAni');
             //Verwijderd weer alles na de duur van de animatie
-            DOM.style.position = ''
             flower.style.zIndex = '';
             header.style.zIndex = ''
+            giftBoxes.forEach(giftBox => {
+                giftBox.style.zIndex = ''
+            });
 
         }, (animationDuration)); // Duur animatie
     

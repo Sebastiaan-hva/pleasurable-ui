@@ -265,7 +265,7 @@ p{
   }
 }
 
-/* ------- CARD HOVER WITH CLICK ANIMATION -------- */
+/* ------- CREATE LIST CARD HOVER WITH CLICK ANIMATION -------- */
 
 .create-list-card:hover{
   background-color: var(--alt-text-color);
@@ -300,5 +300,4 @@ p{
     transform: scale(1, 1.5);
   }
 }
-
 
