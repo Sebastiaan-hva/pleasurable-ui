@@ -1,11 +1,12 @@
+// CONFIGURATIE VOOR VARIABLEN IN SCRIPT
 let max = 180
 let min = -180
 let animationDuration = 1400
 
+// DOM 
 let createListCard = document.querySelector('.create-list-card');
 let flower = document.querySelector('.flower'); 
 let header = document.querySelector('header');
-
 let giftBoxes = document.querySelectorAll('.gift-box'); // Dit selecteerd alle gift-boxes, Bron: https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
 let randomNumber = null; // https://css-tricks.com/random-numbers-css/: Is nu niks maar wordt in de listAni aangepast tot een random number.
 

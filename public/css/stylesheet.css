@@ -91,6 +91,11 @@ body {
     }
 }
 
+/* Margin top ter hoogte van de header die ervoor zorgt dat de content altijd wat ruimte heb*/
+.main-content, .liked-gifts{
+    margin-top: var(--header-height);
+}
+
 /*----------------------------------- HEADER STYLE, GELDIG VOOR ELKE PAGINA --------------------------------------*/
 header {
     height: calc(2vw + var(--header-height));
@@ -263,7 +268,7 @@ header {
 }
 
 
-/*----------------------------------- BUTTON ANIMATIE --------------------------------------*/
+/*----------------------------------- BUTTON ANIMATIE (VOOR HEADER) --------------------------------------*/
 
 .list-button:hover, .profile-button:hover {
     color: var(--alt-text-color);

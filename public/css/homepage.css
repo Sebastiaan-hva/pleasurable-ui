@@ -18,13 +18,18 @@ main.homepage {
 
     /* -------------------------------- MAIN CONTENT ----------------------------------- */
     section.main-content {
-        margin-top: var(--header-height);
         /* boven | rechts | onder | links */
         padding: 6px 15px 15px 15px;
         gap: 2px;
         background-color: var(--results-tab-background-color);
         border-radius: 20px;
         margin-bottom: 80px; /* Ruimte voor vaste chat-tab op mobiel */
+
+        a{
+            display: grid;
+            place-content: center;
+            justify-items: center;
+        }
 
         @media (min-width: 550px) {
             @supports (display: grid){
@@ -131,7 +136,6 @@ main.homepage {
         }
     }
 }
-
 
 p{
     span{
@@ -301,3 +305,28 @@ p{
   }
 }
 
+/* -------------------------------- ANIMATIE VOOR TOEVOEG EN REMOVE BUTTONS ----------------------------------- */
+.add-list-button:hover, .remove-list-button:hover{
+    scale: 1.1;
+    transition: ease-in-out;
+}
+
+.load-state {
+    border-radius: 50%;
+    background-color: rgba(0, 255, 255, 0);
+    width: 28px;
+    height: 28px;
+    border: 5px solid rgba(0, 0, 0, 0.325);
+    border-top: 5px solid rgb(0, 0, 0);
+    opacity: 0.6;
+    animation: spinner 2s infinite;
+    span{
+        display: none;
+    }
+}
+
+@keyframes spinner {
+    100% {
+      rotate: 360deg;
+    }
+}
