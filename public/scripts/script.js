@@ -70,6 +70,8 @@ function giftBoxAni(event) { // Gebruik van event dat niet uitmaakt waarop de .c
         }, 250);
 }
 
+// LOADING STATE
+
 if ('fetch' in window && 'DOMParser' in window) {
 
   document.addEventListener('submit', async function(event) {

@@ -279,3 +279,34 @@ header {
     }
 }
 
+/* -------------------------------- ANIMATIE: VIEW TRANSITION (GIFT CARD) ----------------------------------- */
+
+@view-transition {
+    navigation: auto;
+  }
+  
+::view-transition-old(card-*) {
+    animation: 400ms cubic-bezier(0.3, 0.7, 0.2, 1) both slide-out-up;
+}
+  
+::view-transition-new(main-image),
+::view-transition-new(description) {
+    animation: 500ms cubic-bezier(0.3, 0.7, 0.2, 1) both slide-in-up;
+}
+  
+@keyframes slide-out-up {
+    to {
+        transform: translateY(-150vh) scale(1.2);
+    }
+}
+  
+@keyframes slide-in-up {
+    from {
+        transform: translateY(30px) scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

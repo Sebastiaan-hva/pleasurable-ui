@@ -12,10 +12,10 @@
 
 <main class="gifts-grid">
     {% comment %} <picture> {% endcomment %}
-    <img class="detail-main-image" src="{{ giftResponse.image }}" alt="{{ giftResponse.name }}" alt="" height="400" width="400">
+    <img class="detail-main-image" src="{{ giftResponse.image }}" alt="{{ giftResponse.name }}" alt="" height="400" width="400" style="view-transition-name: main-image;">
     {% comment %} </picture> {% endcomment %}
 
-    <article class="grid-item detail-top">
+    <article class="grid-item detail-top" style="view-transition-name: description;">
         <h1>{{ giftResponse.name }}</h1>
         <p> tags: {{ giftResponse.tags  }}</p>
         <h3>Spotted by: {{ giftResponse.spotter }}</h3>
