@@ -1,0 +1,29 @@
+
+{% render 'partials/head.liquid', title: 'Milledoni Profile'%}
+
+{% render 'partials/header.liquid', slogan: 'Finding and sharing gift ideas' %}
+
+<head>
+    <link rel="stylesheet" href="/css/profile.css">
+</head>
+
+<main class="profile-page">
+<h1>Profile</h1>
+<form class="profile-form">
+    <img src="/assets/girl-1.svg" alt="" class="profile-image" height="92" width="92" loading="eager">
+    <div class="profile-text-box">
+        <label for="Name">Display</label>
+        <input type="text" name="Name" required/>
+        <label for="E-mail">E-mail</label>
+        <input type="text" name="E-mail" required/>
+        <label for="Birthday">Birthday</label>
+        <input type="text" name="Birthday" required/>
+        <label for="Country">Country</label>
+        <input type="text" name="Country" required/>
+    </div>
+    <button class="save-button">Save</button>
+</form>
+
+</main>
+
+{% render 'partials/foot.liquid'%}
