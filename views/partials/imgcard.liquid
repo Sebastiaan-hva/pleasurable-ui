@@ -1,6 +1,6 @@
 {% for gift in allMilledoniProducts %}
-    <a href="/gifts/{{ gift.slug }}" style="view-transition-name: card-{{ gift.id }};"> <!-- Eigen naam zodat deze content lijkt alsof het uit de kaart komt-->
-        <article class="gift-box">
+    <a href="/gifts/{{ gift.slug }}"> <!-- Eigen naam zodat deze content lijkt alsof het uit de kaart komt-->
+        <article class="gift-box" style="view-transition-name: card-{{ gift.id }};">
             <img src="{{ gift.image }}" alt="" class="cover-image" height="240" width="240" {% if forloop.index > 9  %} loading="lazy" {% endif %}> <!-- Na 9 van dit soort kaarten worden ze ingeladen met loading lazy -->
             <h3>{{ gift.name | truncate: 30}}</h3> <!-- Truncate laat de max text karaters tot 40, dit zorgt ervoor dat geen kaartjes tekst uit de box hebben -->
             <p class="card-spotter-text">Spotter: {{ gift.spotter }}</p>
