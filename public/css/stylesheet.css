@@ -279,6 +279,34 @@ header {
     }
 }
 
+
+/*----------------------------------- FLOWER --------------------------------------*/
+    .flower{
+        position: absolute;
+        bottom: 20%;
+        left: 10%;
+        background: var(--flower-color);
+        aspect-ratio: 1;
+        clip-path: shape(from 75.4762724747% 50%, 
+                   arc to 57.872601148% 74.229374948% of 18.5095954079% var(--clockwise), 
+                   arc to 29.3892626146% 64.974577244% of 18.5095954079% var(--clockwise), 
+                   arc to 29.3892626146% 35.025422756% of 18.5095954079% var(--clockwise), 
+                   arc to 57.872601148% 25.770625052% of 18.5095954079% var(--clockwise), 
+                   arc to 75.4762724747% 50% of 18.5095954079% var(--clockwise));
+                   
+
+        @media (min-width: 0px){
+            width: 109px;
+            height: 118px;
+        }
+
+        @media (min-width: 1060px){
+            width: 139px;
+            height: 148px;
+        }
+
+    }
+
 /* -------------------------------- ANIMATIE: VIEW TRANSITION (GIFT CARD) ----------------------------------- */
 
 @view-transition {
@@ -310,3 +338,36 @@ header {
         opacity: 1;
     }
 }
+
+/* -------------------------------- AMIMATIE: VIEW TRANSITION (FLOWER) ----------------------------------- */
+
+::view-transition-group(flower){
+    animation-duration: 1.4s;
+}
+
+::view-transition-old(flower) {
+    animation-name: flower-rotate;
+    animation-timing-function: ease-in;
+    animation-duration: 1.15s;
+    cursor: none;
+}
+  
+::view-transition-new(flower){
+    animation-name: flower-rotate;
+    animation-timing-function: ease-out;
+    animation-duration: 1.15s;
+    cursor: none;
+}
+
+/* ------- FLOWER ANIMATION-------- */
+
+@keyframes flower-rotate{
+  from{
+    transform: scale(1);
+    transform: rotate(0deg);
+  }
+  to{
+    transform: scale(60);
+    transform: rotate(360deg);
+  }
+} 

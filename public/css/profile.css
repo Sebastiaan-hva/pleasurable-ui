@@ -1,3 +1,15 @@
+/* Een bloem die niet bestaat in de nieuwe state. De view transition transitioned dus hiernaartoe*/
+.flower-new{
+    view-transition-name: flower;
+    width: 100vw;
+    height: 100vw;
+    scale: 3;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    margin: 0;
+}
+
 main{
     grid-template-rows: repeat(1, auto);
     place-content: center;
@@ -76,3 +88,17 @@ input{
         height: 162px;
     }
 }
+
+/* Als je van home naar user gaat moet de nieuwe pagina root onzichtbaar zijn */
+/* Een transition-new op de root van de profile.css alleen. Dit zorgt ervoor dat de animatie nu naar niks gaat */
+::view-transition-new(root) {
+    opacity: 0;
+    animation: none;
+}
+
+::view-transition-old(root) {
+    opacity: 1;
+    animation: none;
+}
+
+
