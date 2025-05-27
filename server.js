@@ -25,7 +25,7 @@ app.engine('liquid', engine.express())
 // Let op: de browser kan deze bestanden niet rechtstreeks laden (zoals voorheen met HTML bestanden)
 app.set('views', './views')
 
-// ----------------------------------------------- HOMEPAGE  -----------------------------------------------//
+// ----------------------------------------------- HOMEPAGE -----------------------------------------------//
 
 app.get('/', async function (request, response) {
 
@@ -42,7 +42,13 @@ app.get('/', async function (request, response) {
    response.render('index.liquid', {allMilledoniProducts: all_Products, savedProducts: saved_products });
 })
 
-// ----------------------------------------------- SAVE GIFT CODE  -----------------------------------------------//
+// ----------------------------------------------- PROFILE -----------------------------------------------//
+
+app.get('/profile', async function (request, response) {
+  response.render('profile.liquid');
+})
+
+// ----------------------------------------------- SAVE GIFT CODE -----------------------------------------------//
 app.post('/update-gift/:giftId', async function (request, response) {
 
   const savedProductsURL = 'https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products';

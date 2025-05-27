@@ -1,6 +1,6 @@
 {% for gift in allMilledoniProducts %}
     <a href="/gifts/{{ gift.slug }}"> <!-- Eigen naam zodat deze content lijkt alsof het uit de kaart komt-->
-        <article class="gift-box">
+        <article class="gift-box" style="view-transition-name: card-{{ gift.id }};">
             <img src="{{ gift.image }}" alt="" class="cover-image" height="240" width="240" {% if forloop.index > 9  %} loading="lazy" {% endif %}> <!-- Na 9 van dit soort kaarten worden ze ingeladen met loading lazy -->
             <h3>{{ gift.name | truncate: 30}}</h3> <!-- Truncate laat de max text karaters tot 40, dit zorgt ervoor dat geen kaartjes tekst uit de box hebben -->
             <p class="card-spotter-text">Spotter: {{ gift.spotter }}</p>
@@ -15,14 +15,14 @@
             {% assign savedProductIds = savedProducts | map: 'milledoni_products_id' %} <!-- Voegt array toe aan de map milledoni_productis_id !-->
             {% if savedProductIds contains gift.id %} <!-- Als een array (dus savedProductIds) een bepaald ID Contained voer dan dit uit: !-->
                 <form method="POST" action="/update-gift/{{ gift.id }}" data-enhanced="form-{{ gift.id }}">
-                    <button type="SUBMIT" name="giftId" class="add-list-button" aria-label="Remove from your list" value="{{ gift.id }}" aria-pressed="true"><span>-</span></button>
+                    <button type="SUBMIT" class="add-list-button loading" aria-label="Remove from your list" value="{{ gift.id }}" aria-pressed="true"><span>-</span></button>
                 </form>
                 <noscript>
                     <!-- voer dit uit als de form dus niet werkt!!!-->
                 </noscript>
             {% else %}
                 <form method="POST" action="/update-gift/{{ gift.id }}" data-enhanced="form-{{ gift.id }}">
-                    <button type="SUBMIT" class="remove-list-button" aria-label="Add to your List" aria-pressed="false"><span>+</span></button>
+                    <button type="SUBMIT" class="remove-list-button loading" aria-label="Add to your List" aria-pressed="false"><span>+</span></button>
                 </form>
                 <noscript>
                     <!-- voer dit uit als de form dus niet werkt!!!-->

@@ -18,13 +18,18 @@ main.homepage {
 
     /* -------------------------------- MAIN CONTENT ----------------------------------- */
     section.main-content {
-        margin-top: var(--header-height);
         /* boven | rechts | onder | links */
         padding: 6px 15px 15px 15px;
         gap: 2px;
         background-color: var(--results-tab-background-color);
         border-radius: 20px;
         margin-bottom: 80px; /* Ruimte voor vaste chat-tab op mobiel */
+
+        a{
+            display: grid;
+            place-content: center;
+            justify-items: center;
+        }
 
         @media (min-width: 550px) {
             @supports (display: grid){
@@ -132,7 +137,6 @@ main.homepage {
     }
 }
 
-
 p{
     span{
         margin-right: 5px;
@@ -140,12 +144,14 @@ p{
 }
 
 /* -------------------------------- CREATE LIST CARD ----------------------------------- */
+
 .create-list-card{
     border-radius: 15px;
     background-color: var(--create-list-card);
     margin-top: 10px;
     box-shadow: 5px 3px 10px rgb(0 0 0 / 0.2);
     padding: 10px;
+    animation: rotate 1.4s infinite ease-in-out;
 
     @media (min-width: 0px){
         display: none;
@@ -181,27 +187,8 @@ p{
         border-radius: 40px;
     }
     
-    img{
-        position: absolute;
-    }
-    
-    .flower{
-        bottom: 20%;
-        left: 10%;
-
-        @media (min-width: 0px){
-            width: 99px;
-            height: 108px;
-        }
-
-        @media (min-width: 1060px){
-            width: 129px;
-            height: 138px;
-        }
-
-    }
-    
     .woman{
+        position: absolute;
         bottom: 30%;
 
         @media (min-width: 0px){
@@ -218,3 +205,83 @@ p{
         }
     }
 }
+
+/* -------------------------------- CREATE LIST:: ANIMATIE ----------------------------------- */
+
+/* ------- CARD STANDALONE -------- */
+
+
+@keyframes rotate {
+  0%, 100% {
+    rotate: 0deg;
+  }
+  25% {
+    rotate: 2deg; 
+  }
+  75% {
+    rotate: -2deg; 
+  }
+}
+
+/* ------- CREATE LIST CARD HOVER WITH CLICK ANIMATION -------- */
+
+.create-list-card:hover{
+  background-color: var(--alt-text-color);
+  border-color: black;
+  cursor: pointer;
+    p:first-of-type{
+        color: black;
+    }
+    .woman{
+        filter: blur(1px);
+    }
+}
+
+.clicked{
+  animation-name: bounce;
+  animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+  animation-duration: 0.4s;
+  animation-iteration-count: 1;
+}
+
+@keyframes bounce {
+  0%, 50%, 57%, 64% {
+    transform: scale(1, 1);
+  }
+  10% {
+    transform: scale(1.05, 0.9);
+  }
+  30% {
+    transform: scale(0.9, 1.05);
+  }
+  100%{
+    transform: scale(1, 1.5);
+  }
+}
+
+/* -------------------------------- ANIMATIE VOOR TOEVOEG EN REMOVE BUTTONS ----------------------------------- */
+.add-list-button:hover, .remove-list-button:hover{
+    scale: 1.1;
+    transition: ease-in-out;
+}
+
+.load-state {
+    border-radius: 50%;
+    background-color: rgba(0, 255, 255, 0);
+    width: 28px;
+    height: 28px;
+    border: 5px solid rgba(0, 0, 0, 0.325);
+    border-top: 5px solid rgb(0, 0, 0);
+    opacity: 0.6;
+    animation: spinner 2s infinite;
+    span{
+        display: none;
+    }
+}
+
+@keyframes spinner {
+    100% {
+      rotate: 360deg;
+    }
+}
+

@@ -1,0 +1,106 @@
+/* Een bloem die niet bestaat in de nieuwe state. De view transition transitioned dus hiernaartoe*/
+.flower-new{
+    view-transition-name: flower;
+    width: 100vw;
+    height: 100vw;
+    scale: 3;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    margin: 0;
+    z-index: 1000;
+}
+
+main{
+    grid-template-rows: repeat(1, auto);
+    place-content: center;
+    justify-items: center;
+}
+
+h1{
+    @media (min-width: 820px){
+        margin-top: var(--header-height);
+    }
+}
+
+label{
+    font-size: var(--h3);
+    font-weight: var(--semi-bold);
+    @media (min-width: 720px) {
+        font-size: var(--h2);
+    }
+}
+
+.profile-text-box{
+    width: 100%;
+}
+
+input{
+    width: 100%;
+    border-radius: 10px;
+    height: 34px;
+    padding: 4px;
+    margin-top: 10px;
+    width: 200px;
+    @media (min-width: 520px) {
+        width: 250px;
+    }
+    @media (min-width: 720px) {
+        width: 350px;
+    }
+    @media (min-width: 920px) {
+        width: 550px;
+    }
+}
+
+.profile-form{
+    position: relative;
+    display: grid;
+    grid-template-rows: repeat(1, auto);
+    place-content: center;
+    justify-items: center;
+    background: #FFFFFF;
+    padding: 50px;
+    border-radius: 20px;
+    width: 250px;
+    height: 300px;
+    @media (min-width: 520px) {
+        width: 350px;
+        height: 400px;
+    }
+    @media (min-width: 720px) {
+        width: 450px;
+        height: 500px;
+    }
+    @media (min-width: 920px) {
+        width: 650px;
+        height: 550px;
+    }
+}
+
+.profile-image{
+    position: absolute;
+    top: -10%;
+    left: 7%;
+    width: 92px;
+    height: 92px;
+    @media (min-width: 920px) {
+        width: 162px;
+        height: 162px;
+    }
+}
+
+/* Als je van home naar user gaat moet de nieuwe pagina root onzichtbaar zijn */
+/* Een transition-new op de root van de profile.css alleen. Dit zorgt ervoor dat de animatie nu naar niks gaat */
+
+::view-transition-new(root) {
+    opacity: 0;
+    animation: none;
+}
+
+::view-transition-old(root) {
+    opacity: 1;
+    animation: none;
+}
+
+

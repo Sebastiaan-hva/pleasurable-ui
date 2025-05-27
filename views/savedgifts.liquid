@@ -4,7 +4,7 @@
 
 <main>
     <section class="liked-gifts">
-        <h2>Your Saved Gifts</h2>
+        <h2 class="header-my-gifts">Your Saved Gifts</h2>
             {% for gift in savedGifts | compact %} <!-- Compact zorgt ervoor dat het mogelijk is om een null waarde te hebben -->
                 <article class="gift-box">
                     <a href="/gift/{{ gift.productDetails.id }}">

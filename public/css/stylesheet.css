@@ -17,10 +17,10 @@ a {
 body {
     /*----------------------------------- ALLE VARIABELEN --------------------------------------*/
 
-    /* Lettertypen */
+    /* FONT TYPE */
     --font: 'Parkinsans', sans-serif;
 
-    /* Lettergroottes voor koppen */
+    /* LETTER SIZES */
     --h1: 60px;
     --h2: 40px;
     --h3: 22px;
@@ -36,19 +36,24 @@ body {
     --semi-bold: 600;
     --bold: 800;
 
-    /* Kleuren */
+    /* COLORS */
     --primary-color: #FEFCFA;
     --main-text-color: #000000;
     --alt-text-color: #FFFFFF;
     --main-background-color: #F6F5F5;
     --create-list-card: #868686;
 
-    /* Knoppen */
+    /* BUTTONS */
     --button-background-color: #FFFFFF;
     --second-button-background-color: #212121;
 
-    /* Header height */
+    /* HEADER HEIGHT */
     --header-height: 81.06px;
+
+    /* MISC */
+    --flower-color: #EAEAEA;
+    --clockwise: large cw; /* Large clockwise, Je kan ook: Large (Of small) ccw (Counter Clock Wise)*/
+    --random-degrees: 180deg;
 
     /*----------------------------------- VARIABELEN VOOR ALLE KNOPPEN EN ANDERE ELEMENTEN --------------------------------------*/
 
@@ -84,6 +89,11 @@ body {
         font-size: var(--main-p);
         margin: 0;
     }
+}
+
+/* Margin top ter hoogte van de header die ervoor zorgt dat de content altijd wat ruimte heb*/
+.main-content, .liked-gifts{
+    margin-top: var(--header-height);
 }
 
 /*----------------------------------- HEADER STYLE, GELDIG VOOR ELKE PAGINA --------------------------------------*/
@@ -256,3 +266,130 @@ header {
         height: 25px;
     }
 }
+
+
+/*----------------------------------- BUTTON ANIMATIE (VOOR HEADER) --------------------------------------*/
+
+.list-button:hover, .profile-button:hover {
+    color: var(--alt-text-color);
+    background-color: var(--second-button-background-color);
+    animation: rotate infinite 0.3s ease-in-out;
+    img{
+        filter: brightness(1000);
+    }
+}
+
+
+/*----------------------------------- FLOWER --------------------------------------*/
+    .flower{
+        position: absolute;
+        bottom: 20%;
+        left: 10%;
+        background: var(--flower-color);
+        aspect-ratio: 1;
+        clip-path: shape(from 75.4762724747% 50%, 
+                   arc to 57.872601148% 74.229374948% of 18.5095954079% var(--clockwise), 
+                   arc to 29.3892626146% 64.974577244% of 18.5095954079% var(--clockwise), 
+                   arc to 29.3892626146% 35.025422756% of 18.5095954079% var(--clockwise), 
+                   arc to 57.872601148% 25.770625052% of 18.5095954079% var(--clockwise), 
+                   arc to 75.4762724747% 50% of 18.5095954079% var(--clockwise));
+                   
+
+        @media (min-width: 0px){
+            width: 109px;
+            height: 118px;
+        }
+
+        @media (min-width: 1060px){
+            width: 139px;
+            height: 148px;
+        }
+
+    }
+
+/* -------------------------------- ANIMATIE: VIEW TRANSITION (GIFT CARD) ----------------------------------- */
+
+@view-transition {
+    navigation: auto;
+  }
+
+/* Selecteerd alle kaartjes*/
+::view-transition-old(card-*) {
+    animation: 400ms cubic-bezier(0.3, 0.7, 0.2, 1) both slide-out-up;
+}
+  
+::view-transition-new(main-image),
+::view-transition-new(description) {
+    animation: 500ms cubic-bezier(0.3, 0.7, 0.2, 1) both slide-in-up;
+}
+  
+@keyframes slide-out-up {
+    to {
+        transform: translateY(-150vh) scale(1.2);
+    }
+}
+  
+@keyframes slide-in-up {
+    from {
+        transform: translateY(30px) scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* -------------------------------- AMIMATIE: VIEW TRANSITION (FLOWER) ----------------------------------- */
+
+
+html:active-view-transition-type(home-to-profile),
+html:active-view-transition-type(profile-to-home) {
+
+} /* Moet ik nog bouwen in js, hier komt onderstaande code in tot aan de flower animatie keyframes*/
+
+/* Alles naast de flower group, fade out in 1.4s*/
+::view-transition-new(root),
+::view-transition-old(root) {
+    animation-duration: 0.1s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in;
+}
+
+/* De flower-group een z-index meegeven zodat deze boven alles staat*/
+::view-transition-group(flower){
+    z-index: 1000;
+}
+
+::view-transition-new(flower),
+::view-transition-old(flower){
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+    animation-name: flower-rotate;
+    animation-timing-function: ease-in;
+    overflow: clip;
+    object-fit: cover;
+    cursor: none;
+}
+/* Alle groups en de duration van de animatie totaal*/
+html::view-transition-group(*) {
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+}
+  
+::view-transition-new(flower){
+    animation-timing-function: ease-out;
+}
+
+/* ------- FLOWER ANIMATION-------- */
+
+@keyframes flower-rotate{
+  from{
+    transform: scale(1);
+    transform: rotate(0deg);
+  }
+  to{
+    transform: scale(60);
+    transform: rotate(360deg);
+  }
+} 

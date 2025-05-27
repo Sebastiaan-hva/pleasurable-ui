@@ -40,6 +40,7 @@
     /* position: relative; */
     margin-left:15vw;
     margin-right:15vw;
+	view-transition-name: main-image;
 }
 
 .article-why-this-gift{
@@ -130,3 +131,10 @@ grid-template-areas:
 				background: var(--star-filled);
 			}
 		}
+
+
+/* VIEW TRANSITION*/
+
+.grid-item-detail-top{
+	view-transition-name: description;
+}
