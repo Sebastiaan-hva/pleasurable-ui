@@ -1,7 +1,7 @@
 // CONFIGURATIE VOOR VARIABLEN IN SCRIPT
 let max = 180
 let min = -180
-let animationDuration = 1400
+let animationDuration = 800
 
 // DOM 
 let createListCard = document.querySelector('.create-list-card')
@@ -25,12 +25,12 @@ function giftBoxAni(event) { // Gebruik van event dat niet uitmaakt waarop de .c
 
 // Hide de 'new-flower' na animatie duur.
 setTimeout(() => {
-    flowerNew.style.display = 'none';
-}, animationDuration);
+    flowerNew.style.display = 'none'
+}, animationDuration)
 
 //Beforeunload: Zorgt ervoor dat voordat je de site verlaat, de new-flower weer woord gedisplayed. Dit is nodig omdat deze op display none staat om niet met de DOM te interacten https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event
 addEventListener("beforeunload", (event) => { 
-    flowerNew.style.display = 'block';
+    flowerNew.style.display = 'block'
 })
 
 // LOADING STATE

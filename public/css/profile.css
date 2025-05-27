@@ -8,6 +8,7 @@
     top: 0%;
     left: 0%;
     margin: 0;
+    z-index: 1000;
 }
 
 main{
@@ -91,6 +92,7 @@ input{
 
 /* Als je van home naar user gaat moet de nieuwe pagina root onzichtbaar zijn */
 /* Een transition-new op de root van de profile.css alleen. Dit zorgt ervoor dat de animatie nu naar niks gaat */
+
 ::view-transition-new(root) {
     opacity: 0;
     animation: none;

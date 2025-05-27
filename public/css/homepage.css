@@ -285,8 +285,3 @@ p{
     }
 }
 
-::view-transition-old(article) {
-    opacity: 1;
-    animation: none;
-}
-

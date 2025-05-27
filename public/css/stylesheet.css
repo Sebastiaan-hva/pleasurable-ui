@@ -312,7 +312,8 @@ header {
 @view-transition {
     navigation: auto;
   }
-  
+
+/* Selecteerd alle kaartjes*/
 ::view-transition-old(card-*) {
     animation: 400ms cubic-bezier(0.3, 0.7, 0.2, 1) both slide-out-up;
 }
@@ -341,22 +342,43 @@ header {
 
 /* -------------------------------- AMIMATIE: VIEW TRANSITION (FLOWER) ----------------------------------- */
 
-::view-transition-group(flower){
-    animation-duration: 1.4s;
+
+html:active-view-transition-type(home-to-profile),
+html:active-view-transition-type(profile-to-home) {
+
+} /* Moet ik nog bouwen in js, hier komt onderstaande code in tot aan de flower animatie keyframes*/
+
+/* Alles naast de flower group, fade out in 1.4s*/
+::view-transition-new(root),
+::view-transition-old(root) {
+    animation-duration: 0.1s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in;
 }
 
-::view-transition-old(flower) {
+/* De flower-group een z-index meegeven zodat deze boven alles staat*/
+::view-transition-group(flower){
+    z-index: 1000;
+}
+
+::view-transition-new(flower),
+::view-transition-old(flower){
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
     animation-name: flower-rotate;
     animation-timing-function: ease-in;
-    animation-duration: 1.15s;
+    overflow: clip;
+    object-fit: cover;
     cursor: none;
+}
+/* Alle groups en de duration van de animatie totaal*/
+html::view-transition-group(*) {
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
 }
   
 ::view-transition-new(flower){
-    animation-name: flower-rotate;
     animation-timing-function: ease-out;
-    animation-duration: 1.15s;
-    cursor: none;
 }
 
 /* ------- FLOWER ANIMATION-------- */
