@@ -130,7 +130,11 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/::view-transition
 
 This project is licensed under the terms of the [MIT license](./LICENSE).
 
+### Vragen
 
+- Is de view transition binnen de huisstijl? Of is dit te goofy?
+- Zijn de button animaties binnen de huisstijl of is dit te speels?
+- De header toont nu altijd, dit is uit feedback van vorige sprint, is dit nog goed?
 
 
 
