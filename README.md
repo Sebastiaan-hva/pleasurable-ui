@@ -42,6 +42,7 @@ We werkte met een aantal belangrijke componenten om ervoor te zorgen dat ons pro
 In ons team werkte we ook met reviews op geleverde pull request. 2 mooie voorbeelden:
 -	https://github.com/Sebastiaan-hva/pleasurable-ui/pull/67
 -	https://github.com/Sebastiaan-hva/pleasurable-ui/pull/71
+
 Hierin zie je dat we elkaars feedback verwerkten, en daarna weer opnieuw feedback gaven.
 
 ## Installatie
