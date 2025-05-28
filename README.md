@@ -15,14 +15,16 @@ Als doel gaan wij aflsuiten met de opdrachtgever. We laten ons werk zien en hope
 Vanuit school hebben we deze sprint vooral met UI-States, Progressive Enhancement, Animaties, UX & het POSTen en PATCHen/DELETEen van data uit de database gewerkt. Dit laten wij ook zien hieronder.
 
 ## Uitwerking / Kenmerken
-### View transition.
+### View transition:
 
 Een uitgebreide uitwerking en uitleg hierover kan je [hier]( https://github.com/Sebastiaan-hva/pleasurable-ui/wiki/View-Transition-%E2%80%90-Luuk-Tol-(Blog)) vinden. Ik leg hier uit over de view transition waaraan ik heb gewerkt deze sprint, en hoe andere dit kunnen toepassen.
 
 ### Loading state:
 #### Save-Button
 En ander mooi component in de site is de Loading-state save-button, en de saven button in het algemeen. Dit is hoe het werkt:
- 2025-04-02.09-39-34.mp4 
+
+https://github.com/user-attachments/assets/a7e6859b-d26b-4743-bd20-99e76bfac9ee
+
 Om te bekijken hoe dit allemaal werk is het beste om [hier]( https://github.com/Lutrian1/the-web-is-for-everyone-interactive-functionality?tab=readme-ov-file#save-button--loading-state) te kijken. Ik leg hier uitgebreid uit wat de loading-state allemaal doet, en hoe ik dat heb verwerkt in code.
 
 ## Samenwerking:
