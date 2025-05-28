@@ -91,9 +91,17 @@ https://expressjs.com/en/5x/api.html#app.post.method
 
 https://directus.io/docs/api/items#create-an-item
 
-[https://directus.io/docs/api/items#create-an-item
+https://directus.io/docs/api/items#create-an-item
 
-](https://directus.io/docs/api/items#update-an-item)
+https://directus.io/docs/api/items#update-an-item
+
+https://codepen.io/Lutrian1/pen/jEPNJMe
+
+https://shopify.github.io/liquid/tags/iteration/
+
+https://shopify.github.io/liquid/filters/truncate/
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/::view-transition
 
 This project is licensed under the terms of the [MIT license](./LICENSE).
 
