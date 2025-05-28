@@ -27,6 +27,31 @@ https://github.com/user-attachments/assets/a7e6859b-d26b-4743-bd20-99e76bfac9ee
 
 Om te bekijken hoe dit allemaal werk is het beste om [hier]( https://github.com/Lutrian1/the-web-is-for-everyone-interactive-functionality?tab=readme-ov-file#save-button--loading-state) te kijken. Ik leg hier uitgebreid uit wat de loading-state allemaal doet, en hoe ik dat heb verwerkt in code.
 
+### Detail Page
+
+Wij kunnen maar 1 image dynamisch inladen dus daarom hebben we voor een 1 column layout gekozen.
+
+<img src="https://github.com/user-attachments/assets/217fefe1-b27d-46d8-8ad3-8f168befdecc" width=500>
+
+detail page design: 
+
+<img src="https://github.com/user-attachments/assets/f2d65b47-ad12-46e8-b751-bbf43cc66b6b" width=500>
+
+#### Rating Component
+
+volledig progressively enhanced.
+
+https://github.com/user-attachments/assets/8f387289-f442-4f24-a65f-da17c29f0cb6
+
+
+
+#### Pleasurable hover Interactie
+
+
+https://github.com/user-attachments/assets/a0b98b85-324a-415e-9010-09a7e6f8a9df
+
+
+
 ## Samenwerking:
 ### Project boards:
 Dit is hoe ons project board eruit zag toen we volop aan de slag waren:
