@@ -29,7 +29,7 @@ Om te bekijken hoe dit allemaal werk is het beste om [hier]( https://github.com/
 
 ### Detail Page
 
-Wij kunnen maar 1 image dynamisch inladen dus daarom hebben we voor een 1 column layout gekozen.
+Wij kunnen maar 1 image dynamisch inladen dus daarom hebben we voor een 1 column layout gekozen. Wij hebben ook samen besloten om de layout van de website zo in te richten dat de header soort naast de content van de pagina valt zodat alle tekst altijd te lezen is tijdens het scrollen.
 
 <img src="https://github.com/user-attachments/assets/217fefe1-b27d-46d8-8ad3-8f168befdecc" width=500>
 
@@ -39,7 +39,8 @@ detail page design:
 
 #### Rating Component
 
-volledig progressively enhanced.
+Verder heb ik zo veel mogelijk overal de milledoni kleuren/stijl in toe te passen. Dus ook als we de assets niet hadden heb ik toch geprobeerd de svg's in de juiste style te vinden.
+volledig progressively enhanced natuurlijk.
 
 https://github.com/user-attachments/assets/8f387289-f442-4f24-a65f-da17c29f0cb6
 
