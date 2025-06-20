@@ -19,13 +19,35 @@ Vanuit school hebben we deze sprint vooral met UI-States, Progressive Enhancemen
 
 Een uitgebreide uitwerking en uitleg hierover kan je [hier]( https://github.com/Sebastiaan-hva/pleasurable-ui/wiki/View-Transition-%E2%80%90-Luuk-Tol-(Blog)) vinden. Ik leg hier uit over de view transition waaraan ik heb gewerkt deze sprint, en hoe andere dit kunnen toepassen.
 
+### Homepage Liquid
+#### Partials
+Wij hebben deze sprint ook besloten om voornamelijk te werken met partials zodat we die ook later konden plakken in bijvoorbeeld de homepage. 1 component was bijvoorbeeld 1 partial. 1 voorbeeld is de header partial (te vinden in de map 'views') of bijvoorbeeld de [imgcard partial](https://github.com/Sebastiaan-hva/pleasurable-ui/blob/main/views/partials/imgcard.liquid). Deze imgcard partial word gerendered in de homepage en is eigenlijk ook de 'main' content. Dit is de code: 
+
+https://github.com/Sebastiaan-hva/pleasurable-ui/blob/a5c8954d6dd06dfacd8b49b043621602209f9805/views/partials/imgcard.liquid#L1-L33
+
+Om alles even langs te gaan. Deze for loop plakt eigenlijk alle losse content / gifts (ongefiltered) in de homepage. Zoals hier staat beschereven:
+
+https://github.com/Sebastiaan-hva/pleasurable-ui/blob/a5c8954d6dd06dfacd8b49b043621602209f9805/views/partials/imgcard.liquid#L1
+
+Bijbehorende data uit de directus kan dan ook worden meegegeven: 
+
+https://github.com/Sebastiaan-hva/pleasurable-ui/blob/a5c8954d6dd06dfacd8b49b043621602209f9805/views/partials/imgcard.liquid#L5
+
+Zodat je alles niet zelf hoeft te schrijven en de content ook veranderd met nieuwe data. Ik gebruik hier 'truncate', dit zorgt ervoor dat een titel nooit langer is dan 30 karakters. Dit is zodat de styling altijd word behouden. 
+
+Voor performance heb ik ook nagedacht met de 'loading-lazy' in HTML. Ik maak een if loop dat telt hoeveel van de images pas de lazy tag kan worden toegepast. 
+
+https://github.com/Sebastiaan-hva/pleasurable-ui/blob/a5c8954d6dd06dfacd8b49b043621602209f9805/views/partials/imgcard.liquid#L4
+
+In dit geval dus pas na de 9e image.
+
 ### Loading state:
 #### Save-Button
 En ander mooi component in de site is de Loading-state save-button, en de saven button in het algemeen. Dit is hoe het werkt:
 
 https://github.com/user-attachments/assets/a7e6859b-d26b-4743-bd20-99e76bfac9ee
 
-Om te bekijken hoe dit allemaal werk is het beste om [hier]( https://github.com/Lutrian1/the-web-is-for-everyone-interactive-functionality?tab=readme-ov-file#save-button--loading-state) te kijken. Ik leg hier uitgebreid uit wat de loading-state allemaal doet, en hoe ik dat heb verwerkt in code.
+Om te bekijken hoe dit allemaal werk is het beste om [hier](https://github.com/Lutrian1/the-web-is-for-everyone-interactive-functionality?tab=readme-ov-file#save-button--loading-state) te kijken. Ik leg hier uitgebreid uit wat de loading-state allemaal doet, en hoe ik dat heb verwerkt in code.
 
 ### Detail Page
 
